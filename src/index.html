@@ -1,12 +1,19 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Angular Skeleton</title>
-  <base href="/" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <title>Taller Angular Series</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CDN (estilos mínimos para la tabla) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-MlJ6YVZqv3q4jG6QJd2a7q6Zl7r1YfY5Q1z9Kq3Qe1o5eF6V7Y8YQ5m3b9K3Q2V" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <!-- Mensaje temporal visible si Angular no arranca -->
+    <div style="padding:16px; font-family: Arial, Helvetica, sans-serif; color:#555;">Aplicación Angular: cargando... Si esto sigue visible, Angular no arrancó.</div>
+  </app-root>
+  <script>console.log('index served: if you see this, the dev server is returning index.html');</script>
 </body>
 </html>

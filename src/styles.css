@@ -1,9 +1,105 @@
-/* Estilos globales mínimos */
+/* You can add global styles to this file, and also import other style files */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 16px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f7f9;
 }
 
-h1 {
-  color: #2c3e50;
+/* Top bar */
+.topbar {
+  background: #1aa3a9; /* teal */
+  color: white;
+  padding: 10px 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand .logo {
+  width: 36px;
+  height: 36px;
+  background: #072b2d;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.brand h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.app-shell {
+  padding: 18px 24px;
+}
+
+/* Layout for series list + detail */
+.series-layout {
+  background: white;
+  padding: 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.series-table table {
+  margin-bottom: 0;
+}
+.series-table tr:hover { background: #f1f7fb; }
+.series-table td, .series-table th { vertical-align: middle; }
+
+.divider-vertical {
+  border-left: 3px solid #2d3e3f;
+  height: 100%;
+}
+
+.detail-card .card {
+  border: none;
+}
+.detail-card .card-img-top {
+  /* Show images at their natural size while keeping them responsive.
+     They won't be stretched; they'll scale down if wider than the card. */
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+.detail-card .card-body {
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* Force two-column layout and scrolling on the left table */
+.series-layout .row.d-flex { display: flex; align-items: flex-start; gap: 12px; }
+.left-col { padding: 12px 18px; flex: 1 1 72%; max-width: 72%; }
+.right-col { flex: 0 0 26%; max-width: 26%; }
+.table-frame {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  max-height: 640px;
+  overflow: auto;
+}
+.table-frame .table { width: 100%; max-width: 900px; margin: 0 auto; font-size: 15px; }
+.table-frame .table thead th { position: sticky; top: 0; background: #fff; z-index: 5; padding: 16px 12px; border-bottom: 2px solid #e9ecef; }
+.table-frame .table tbody td { padding: 14px 12px; }
+.table-frame .table tbody tr { border-bottom: 1px solid #eef2f4; }
+.table-frame .table thead th:first-child, .table-frame .table tbody td:first-child { text-align: center; width: 64px; }
+.table-frame .table thead th:last-child, .table-frame .table tbody td:last-child { text-align: center; width: 96px; }
+
+/* selected row highlight (bootstrap .table-active used) */
+.table-active { background-color: #e9f7ff !important; }
+
+/* Small responsive tweaks */
+@media (max-width: 767px) {
+  .divider-vertical { display: none; }
+  .detail-card .card-img-top { height: 160px; }
+}
+
+.table a { color: #007bff; }

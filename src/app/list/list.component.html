@@ -1,3 +1,43 @@
-<ul>
-  <li *ngFor="let item of items">{{ item }}</li>
-</ul>
+<div class="series-layout container">
+  <div class="row d-flex">
+    <div class="col-md-8 series-table left-col">
+      <div class="table-frame">
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th style="width:48px;">#</th>
+            <th>Name</th>
+            <th>Channel</th>
+            <th style="width:90px;">Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of series" (click)="select(s)" [class.table-active]="selected?.id===s.id" style="cursor: pointer;">
+            <td><strong>{{ s.id }}</strong></td>
+            <td><a href="#" (click)="$event.preventDefault(); select(s)">{{ s.name }}</a></td>
+            <td>{{ s.channel }}</td>
+            <td>{{ s.seasons }}</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-1 d-none d-md-block">
+      <div class="divider-vertical"></div>
+    </div>
+
+    <div class="col-md-3 detail-card right-col" *ngIf="selected">
+      <div class="card">
+        <img *ngIf="selected.poster" [src]="selected.poster" class="card-img-top" alt="Poster">
+        <div class="card-body">
+          <h5 class="card-title">{{ selected.name }}</h5>
+          <p class="card-text">{{ selected.description }}</p>
+          <p><strong>Channel:</strong> {{ selected.channel }}</p>
+          <p><strong>Seasons:</strong> {{ selected.seasons }}</p>
+          <a *ngIf="selected.webpage" [href]="selected.webpage" target="_blank" class="btn btn-outline-primary btn-sm">Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

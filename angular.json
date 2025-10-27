@@ -3,6 +3,7 @@
   "version": 1,
   "projects": {
     "angular-skeleton": {
+      "root": "",
       "projectType": "application",
       "sourceRoot": "src",
       "architect": {

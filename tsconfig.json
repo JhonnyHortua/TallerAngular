@@ -4,6 +4,7 @@
     "outDir": "./out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "skipLibCheck": true,
     "module": "es2020",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
